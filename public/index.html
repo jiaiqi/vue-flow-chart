@@ -1,17 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>vue-flow-chart</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but vue-flow-chart doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>数据预处理</title>
+</head>
+<style>
+  html,body{
+    height: 100%;
+    width:100%;
+  }
+  .menu-left {
+    background-color: #dbdbdb;
+  }
+
+  .layout-center {
+    background-image: url(./images/grid_bg.jpeg);
+  }
+
+  .menu-right {
+    background-color: #dbdbdb;
+  }
+
+  .jtk-miniview-panner {
+    border: 0px;
+  }
+
+  .pane-node-content {
+    border: 1px solid #289de9;
+    border-radius: 15px;
+    cursor: move;
+    line-height: 26px;
+    overflow: hidden;
+    min-width: 150px;
+  }
+
+  .pane-node-content:hover {
+    background-color: rgba(227, 244, 255, 0.9);
+  }
+
+  .pane-node-content .iconfont {
+    width: 26px;
+    height: 26px;
+    margin: 1px;
+    border-radius: 100%;
+    float: left;
+    color: #fff;
+    font-size: 14px;
+    background-color: #289de9;
+    cursor: pointer;
+  }
+
+  .right {
+    width: calc(100% - 26px);
+  }
+
+  .save {
+    width: 100%;
+  }
+
+  .submit {
+    position: absolute;
+    right: 45px;
+    bottom: 25px;
+  }
+</style>
+<!-- jquery|jquery-ui -->
+<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+<!-- <script src="./js/require.js"></script> -->
+
+<!-- 图标|bootstrap核心库 -->
+<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+
+<!-- ztree控件 -->
+<link rel="stylesheet" type="text/css" href="./css/metroStyle.css" />
+<script type="text/javascript" src="./js/jquery.ztree.core.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./css/context.standalone.css" />
+<script type="text/javascript" src="./js/context.js"></script>
+
+<!-- jsplumb控件库 -->
+<link rel="stylesheet" type="text/css" href="./css/jsPlumbToolkit-defaults.css" />
+<link rel="stylesheet" type="text/css" href="./css/jsplumbtoolkit-demo.css" />
+<!-- <script type="text/javascript" src="./js/jsplumb.min.js"></script> -->
+<!-- <script type="text/javascript" src="./js/jsplumbtoolkit.js"></script> -->
+
+<!-- <script src="./js/ztree.util.js"></script> -->
+<!-- <script src="./js/jsplumb.util.js"></script> -->
+
+<!-- <script src="./js/core.util.js"></script> -->
+
+<!-- <script src="./js/contextjs.util.js"></script> -->
+<!-- <script src="./js/draggable.util.js"></script> -->
+<script src="./js/util.js"></script>
+
+<body>
+  <noscript>
+    <strong>We're sorry but vue-flow-chart doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
